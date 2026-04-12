@@ -1,0 +1,133 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/demo_game.gd" id="1_demo"]
+[ext_resource type="Script" path="res://scripts/systems/simple_enemy_ai.gd" id="3_ai"]
+
+[node name="DemoGame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_demo")
+
+[node name="Bg" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.07, 0.08, 0.1, 1)
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 16
+
+[node name="RootVBox" type="VBoxContainer" parent="Margin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="TopBar" type="HBoxContainer" parent="Margin/RootVBox"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="TickLabel" type="Label" parent="Margin/RootVBox/TopBar"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Tick"
+
+[node name="PauseBtn" type="CheckButton" parent="Margin/RootVBox/TopBar"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "暂停 Tick"
+
+[node name="RestartBtn" type="Button" parent="Margin/RootVBox/TopBar"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "重开"
+
+[node name="StatsLabel" type="Label" parent="Margin/RootVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "stats"
+
+[node name="BoardLabel" type="Label" parent="Margin/RootVBox"]
+layout_mode = 2
+text = "桌面 — 建筑牌（拖放目标）"
+
+[node name="BoardRow" type="HBoxContainer" parent="Margin/RootVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="HandLabel" type="Label" parent="Margin/RootVBox"]
+layout_mode = 2
+text = "手牌 — 物品 / 士兵 / 事件"
+
+[node name="HandRow" type="HBoxContainer" parent="Margin/RootVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="LogLabel" type="RichTextLabel" parent="Margin/RootVBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+fit_content = false
+scroll_active = true
+
+[node name="SimpleEnemyAI" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("3_ai")
+
+[node name="GameOverOverlay" type="ColorRect" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.65)
+mouse_filter = 0
+
+[node name="CenterVBox" type="VBoxContainer" parent="GameOverOverlay"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -52.0
+offset_right = 160.0
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="GameOverLabel" type="Label" parent="GameOverOverlay/CenterVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_alignment = 1
+text = "结束"
+
+[node name="OverlayRestart" type="Button" parent="GameOverOverlay/CenterVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "再来一局"

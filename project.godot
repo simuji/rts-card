@@ -11,14 +11,17 @@ config_version=5
 [application]
 
 config/name="rtsCard"
-run/main_scene="res://scenes/demo_game.tscn"
+run/main_scene="res://scenes/grid_board.tscn"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="res://icon.svg"
 
-[autoload]
+[display]
 
-TickManager="*res://autoload/tick_manager.gd"
-GameState="*res://autoload/game_state.gd"
+window/size/initial_position_type=0
+window/size/window_width_override=1920
+window/size/window_height_override=1080
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+mouse_cursor/tooltip_position_offset=Vector2(0, 0)
 
 [physics]
 
@@ -26,6 +29,7 @@ GameState="*res://autoload/game_state.gd"
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=3
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"

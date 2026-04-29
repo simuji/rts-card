@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://dwtqdf7gwnq0g"]
+
+[ext_resource type="Script" uid="uid://coh3dbvc270yg" path="res://scripts/grid_board.gd" id="1_7n3wn"]
+
+[node name="GridBoard" type="Node2D" unique_id=750449230]
+script = ExtResource("1_7n3wn")
+grid_cols = null
+grid_rows = null
+cell_size = null
+board_origin = null
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1860650813]
+
+[node name="BuildingPanel" type="PanelContainer" parent="CanvasLayer" unique_id=105381210]
+offset_left = 860.0
+offset_top = 70.0
+offset_right = 1130.0
+offset_bottom = 420.0
+
+[node name="Margin" type="MarginContainer" parent="CanvasLayer/BuildingPanel" unique_id=1094659154]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBox" type="VBoxContainer" parent="CanvasLayer/BuildingPanel/Margin" unique_id=891256156]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Title" type="Label" parent="CanvasLayer/BuildingPanel/Margin/VBox" unique_id=553082098]
+layout_mode = 2
+text = "建筑: -"
+
+[node name="Description" type="Label" parent="CanvasLayer/BuildingPanel/Margin/VBox" unique_id=1512094085]
+layout_mode = 2
+text = "说明: -"
+autowrap_mode = 3
+
+[node name="EventSlotButton" type="Button" parent="CanvasLayer/BuildingPanel/Margin/VBox" unique_id=1776877336]
+layout_mode = 2
+text = "事件卡槽: 空"
+
+[node name="ResourceSlotButton" type="Button" parent="CanvasLayer/BuildingPanel/Margin/VBox" unique_id=1925105013]
+layout_mode = 2
+text = "资源卡槽: 空"
+
+[node name="ProduceButton" type="Button" parent="CanvasLayer/BuildingPanel/Margin/VBox" unique_id=484069352]
+layout_mode = 2
+text = "执行生产"
+
+[node name="Result" type="Label" parent="CanvasLayer/BuildingPanel/Margin/VBox" unique_id=204820881]
+layout_mode = 2
+text = "产出: 无"
+autowrap_mode = 3

@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://d4kbrp8cb6jup"]
+
+[ext_resource type="Texture2D" uid="uid://5g57f4qdjxln" path="res://pictures/buliding/camp.png" id="1_qdn3d"]
+
+[node name="BuildingCard" type="Control" unique_id=947114007]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1024.0
+offset_bottom = -520.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="building" type="TextureRect" parent="." unique_id=1046178852]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 128.0
+texture = ExtResource("1_qdn3d")

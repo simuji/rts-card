@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://db241e50ao2gd"]
+
+[ext_resource type="Texture2D" uid="uid://bpa53jlsmi0yk" path="res://pictures/buliding/house.png" id="2_qoy6s"]
+
+[node name="BuildingCard" type="Control" unique_id=947114007]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1024.0
+offset_bottom = -520.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="building" type="TextureRect" parent="." unique_id=1046178852]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 130.0
+offset_bottom = 130.0
+texture = ExtResource("2_qoy6s")
